@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* Custom Properties */
+:root {
+  --color-primary: #030712;
+  --color-secondary: #0f172a;
+  --color-accent-blue: #38bdf8;
+  --color-accent-purple: #818cf8;
+  --color-accent-cyan: #22d3ee;
+  --primary-glow: rgba(56, 189, 248, 0.15);
+  --secondary-glow: rgba(129, 140, 248, 0.15);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-primary);
+    color: rgb(226 232 240);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+}
+
+/* Premium Grain Overlay */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Portfolio Logo Background */
+.bg-grain::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-image: url('/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.02;
+  filter: blur(1px);
+}
+
+/* Animated Sketch Background */
+.bg-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(56, 189, 248, 0.02) 10px, rgba(56, 189, 248, 0.02) 11px),
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(129, 140, 248, 0.02) 10px, rgba(129, 140, 248, 0.02) 11px);
+  animation: sketch-move 20s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes sketch-move {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 100px 100px, -100px 100px;
+  }
+}
+
+/* Glassmorphism V2 - Optimized */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.glass-card {
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Typography Depth */
+.text-glow {
+  text-shadow: 0 0 30px var(--primary-glow);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom right, white, white, rgba(255, 255, 255, 0.4));
+}
+
+.text-accent-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-purple), var(--color-accent-cyan));
+}
+
+/* Section Spacing */
+.section-padding {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(30 41 59);
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(51 65 85);
+}
+
+/* Animated Background Orbs - Optimized */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Layout Utilities */
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

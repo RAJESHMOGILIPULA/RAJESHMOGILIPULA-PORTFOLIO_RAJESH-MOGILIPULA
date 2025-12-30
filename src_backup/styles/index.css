@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #030712;
+  --color-secondary: #0f172a;
+  --color-accent-blue: #38bdf8;
+  --color-accent-purple: #818cf8;
+  --color-accent-cyan: #22d3ee;
+
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --primary-glow: rgba(56, 189, 248, 0.15);
+    --secondary-glow: rgba(129, 140, 248, 0.15);
+  }
+
+  body {
+    @apply bg-primary text-slate-200 antialiased overflow-x-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Premium Grain Overlay */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Glassmorphism V2 */
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-md border border-white/5 hover:border-white/20 transition-all duration-500;
+}
+
+/* Typography Depth */
+.text-glow {
+  text-shadow: 0 0 30px var(--primary-glow);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-white/40;
+}
+
+.text-accent-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-purple to-accent-cyan;
+}
+
+/* Section Spacing */
+.section-padding {
+  @apply py-32 md:py-48;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Masking & Reveals */
+.reveal-mask {
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+}
+
+/* Animated Background Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Layout Utilities */
+.container-custom {
+  @apply max-w-7xl mx-auto px-6 md:px-12;
+}
