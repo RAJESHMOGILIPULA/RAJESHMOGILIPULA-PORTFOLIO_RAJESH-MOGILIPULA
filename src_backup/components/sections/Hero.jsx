@@ -78,7 +78,7 @@ const Hero = () => {
                         className="max-w-xl space-y-8"
                     >
                         <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
-                            Senior <span className="text-white font-medium">Full Stack Architect</span> specialized in high-performance Java ecosystems and immersive frontend experiences.
+                            Junior <span className="text-white font-medium">Full Stack Developer</span> specialized in high-performance Java ecosystems and immersive backend experiences.
                         </p>
 
                         <div className="flex flex-wrap gap-6 items-center">
