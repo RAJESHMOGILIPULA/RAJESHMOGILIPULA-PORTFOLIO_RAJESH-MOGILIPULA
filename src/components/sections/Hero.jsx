@@ -100,7 +100,7 @@ const Hero = () => {
                         className="max-w-xl space-y-8"
                     >
                         <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
-                            Junior <span className="text-white font-medium">Full Stack Devoloper</span> specialized in high-performance Java ecosystems and immersive Backend experiences.
+                            Junior  <span className="font-medium text-accent-gradient">Full Stack Devoloper</span> specialized in high-performance Java ecosystems and immersive Backend experiences.
                         </p>
 
                         <div className="flex flex-wrap gap-6 items-center">
