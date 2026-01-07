@@ -100,7 +100,7 @@ const Hero = () => {
                         className="max-w-xl space-y-8"
                     >
                         <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
-                            Senior <span className="text-white font-medium">Full Stack Architect</span> specialized in high-performance Java ecosystems and immersive frontend experiences.
+                            Junior <span className="text-white font-medium">Full Stack Devoloper</span> specialized in high-performance Java ecosystems and immersive Backend experiences.
                         </p>
 
                         <div className="flex flex-wrap gap-6 items-center">
@@ -118,20 +118,6 @@ const Hero = () => {
                                 <FiArrowDownRight className="relative z-10 text-xl group-hover:text-white transition-colors duration-200" />
                             </motion.button>
 
-                            <motion.a
-                                href="/resume.pdf"
-                                download="Rajesh_Mogilipula_Resume.pdf"
-                                whileHover={{
-                                    scale: 1.05,
-                                    borderColor: "rgba(129, 140, 248, 0.8)",
-                                    backgroundColor: "rgba(129, 140, 248, 0.05)"
-                                }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ type: "tween", ease: "circOut", duration: 0.15 }}
-                                className="px-8 py-4 glass-panel rounded-full text-white font-bold flex items-center gap-2 border border-white/5 transition-colors duration-200"
-                            >
-                                DOWNLOAD CV
-                            </motion.a>
                         </div>
                     </motion.div>
                 </div>
